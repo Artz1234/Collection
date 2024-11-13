@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            Collections
+        </title>
+        <link rel="stylesheet" href="common.css">
+        <style>
+            body{
+                background-color: #000000;
+            }
+            img{
+                margin-left: 20px;
+            }
+            .image{
+                width: 90vi;
+                height: 100px;
+                object-fit: cover;
+                object-position: center;
+                border: 2px solid #000000;
+                border-radius: 10px;
+                text-align: center;
+                position: relative;
+                transition-duration: 500ms;
+                opacity: 0.6;
+            }
+            .imagedef {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background-color: rgb(6, 30, 16);
+                border-radius: 5px;
+                padding-left: 5px;
+                padding-right: 5px;
+                color: #00ff00;
+                padding: 0;
+                padding-left: 5px;
+                padding-right: 5px;
+                transition-duration: 500ms;
+            }
+            .imga:hover .imagedef{
+                color: #000000;
+                background-color: #00ff00;
+            }
+            .imga:hover .image{
+                
+                border: 2px solid #00ff00;
+                opacity: 1;
+            }
+            .imga{
+                width: 0;
+                border-radius: 0;
+                background: none;
+                padding: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <br/>
+        <a class="imga" href="https://artz1234.github.io/BPG/">
+            <div class="imagecontainer">
+                <img class="image" src="desert.png">
+                <p class="imagedef">BPG</p>
+            </div>
+        </a>
+        <a class="imga" href="https://artz1234.github.io/Manifest/">
+            <div class="imagecontainer">
+                <img class="image" src="geometry.JPG">
+                <p class="imagedef">Inclinometer</p>
+            </div>
+        </a>
+        <a class="imga" href="https://artz1234.github.io/PeriodicTable/">
+            <div class="imagecontainer">
+                <img class="image" src="PeriodicTable.png">
+                <p class="imagedef">Periodic Table</p>
+            </div>
+        </a>
+
+    </body>
+</html>
