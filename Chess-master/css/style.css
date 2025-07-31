@@ -19,10 +19,11 @@ html, body{
 #board .square{
 	background-image:url("../img/pieces.png");
 	background-size:600% 200%;
-	width: 10vw; 
-        max-width: 10vh;
+	width: 9vw; 
+        max-width: 9vh;
         aspect-ratio: 1 / 1; 
         margin: 0 auto; 
+	box-sizing: border-box;
 	float:left;
 	cursor:pointer;
 	z-index:10;
