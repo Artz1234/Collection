@@ -8,8 +8,11 @@ html, body{
 
 #board{
 	border: 1px solid #000;
-	width:642px;
-	height:642px;
+	width: 90vw; 
+        max-width: 90vh;
+        aspect-ratio: 1 / 1; 
+        margin: 0 auto; 
+        box-sizing: border-box;
 	position:relative;
 }
 
