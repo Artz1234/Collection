@@ -508,6 +508,7 @@ let setup = function(){
 			boardSquares.push(square);
 			boardContainer.appendChild(squareElement);
 		}
+		document.createElement("br")
 	}
     white.king = new King(5, 8, "white");
     black.king = new King(5, 1, "black");
