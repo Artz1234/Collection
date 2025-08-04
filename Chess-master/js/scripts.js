@@ -9,22 +9,28 @@ let selectedSquare = null;
 
 function setClrT() {
     if(currentPlayer.color == "white"){
-        let wSec = document.getElementById("whiteSec").innerHTML
-        console.log(wSec)
-        wSec = wSec - 1
+        let wSec = document.getElementById("whiteSec").innerHTML;
+        console.log(wSec);
+        wSec = wSec - 1;
         if(wSec < 0){
-            document.getElementById("whiteMin").innerHTML = document.getElementById("whiteMin").innerHTML - 1
-            wSec = wSec + 60
+            if(document.getElementById("whiteMin").innerHTML==0){
+                showError("No time for WHITE");
+            }
+            document.getElementById("whiteMin").innerHTML = document.getElementById("whiteMin").innerHTML - 1;
+            wSec = wSec + 60;
         }
         document.getElementById("whiteSec").innerHTML = String(wSec).padStart(2, '0');
     }
     if(currentPlayer.color == "black"){
-        let wSec = document.getElementById("blackSec").innerHTML
-        console.log(wSec)
-        wSec = wSec - 1
+        let wSec = document.getElementById("blackSec").innerHTML;
+        console.log(wSec);
+        wSec = wSec - 1;
         if(wSec < 0){
-            document.getElementById("blackMin").innerHTML = document.getElementById("blackMin").innerHTML - 1
-            wSec = wSec + 60
+            if(document.getElementById("blackMin").innerHTML==0){
+                showError("No time for black");
+            }
+            document.getElementById("blackMin").innerHTML = document.getElementById("blackMin").innerHTML - 1;
+            wSec = wSec + 60;
         }
         document.getElementById("blackSec").innerHTML = String(wSec).padStart(2, '0');
     }
