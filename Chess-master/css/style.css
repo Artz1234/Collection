@@ -9,19 +9,19 @@ html, body{
 #board{
 	border: 1px solid #000;
 	width: 90vw; 
-        max-width: 90vh;
-        aspect-ratio: 1 / 1; 
-        margin: 0 auto; 
-        box-sizing: border-box;
+    max-width: 90vh;
+    aspect-ratio: 1 / 1; 
+    margin: 0 auto; 
+    box-sizing: border-box;
 	position:relative;
 }
 
 #board .square{
 	background-image:url("../img/pieces.png");
 	background-size:600% 200%;
-	width: 11vw; 
-        max-width: 11vh;
-        aspect-ratio: 1 / 1; 
+	width: 11.2vw; 
+    max-width: 11.2vh;
+    aspect-ratio: 1 / 1; 
 	float:left;
 	cursor:pointer;
 	z-index:10;
@@ -105,7 +105,7 @@ html, body{
 	width:100%;
 	z-index:0;
 	opacity:0;
-    webkit-transition: all .3s ease-out;
+    -webkit-transition: all .3s ease-out;
     -moz-transition: all .3s ease-out;
     -ms-transition: all .3s ease-out;
     -o-transition: all .3s ease-out;

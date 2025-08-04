@@ -36,11 +36,12 @@
 			<a href="#" class="overlay-button" onclick="closeEnd();">Close</a>
 			<a href="#" class="overlay-button" onclick="newsetup();">New Game</a>
 		</div>
-	</div>
+	</div> 
 </section>
-
-<p id="turnInfo">Player's turn: <b>White</b> </p>  <a href="#" class="button" onclick="showEnd('This will reset the current game');">New Game</a> 
-
+ 
+<span style="color: white;background-color: black;border-radius: 5px;padding: 3px; border: 2px solid gray;" id="blackTime"><span id="blackMin">10</span>:<span id="blackSec">00</span></span>
+<span style="color: black;background-color: white;border-radius: 5px;padding: 3px; border: 2px solid gray;" id="whiteTime"><span id="whiteMin">10</span>:<span id="whiteSec">00</span></span>
+<a href="#" class="button" onclick="showEnd('This will reset the current game');">New Game</a> 
 <script type="text/javascript" src="js/scripts.js"></script>
 
 </body>

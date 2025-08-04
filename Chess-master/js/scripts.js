@@ -7,6 +7,32 @@ let boardSquares = [];
 
 let selectedSquare = null;
 
+function setClrT() {
+    if(currentPlayer.color == "white"){
+        let wSec = document.getElementById("whiteSec").innerHTML
+        console.log(wSec)
+        wSec = wSec - 1
+        if(wSec < 0){
+            document.getElementById("whiteMin").innerHTML = document.getElementById("whiteMin").innerHTML - 1
+            wSec = wSec + 60
+        }
+        document.getElementById("whiteSec").innerHTML = String(wSec).padStart(2, '0');
+    }
+    if(currentPlayer.color == "black"){
+        let wSec = document.getElementById("blackSec").innerHTML
+        console.log(wSec)
+        wSec = wSec - 1
+        if(wSec < 0){
+            document.getElementById("blackMin").innerHTML = document.getElementById("blackMin").innerHTML - 1
+            wSec = wSec + 60
+        }
+        document.getElementById("blackSec").innerHTML = String(wSec).padStart(2, '0');
+    }
+}
+
+// Call the function every 1000 milliseconds (1 second)
+const intervalId = setInterval(setClrT, 1000);
+
 let Player = function(color){
     this.checked = false;
 	this.color = color;
@@ -1142,9 +1168,11 @@ let nextTurn = function(){
     turn++;
 	if(currentPlayer.color == "white"){
 		currentPlayer = black;
-        document.getElementById("turnInfo").innerHTML = "Player's turn: <b>Black</b>";
-	}else{
+        document.getElementById("blackTime").style.backgroundColor = "black";
+        document.getElementById("whiteTime").style.backgroundColor = "darkgrey";
+	} else{
 		currentPlayer = white;
-        document.getElementById("turnInfo").innerHTML = "Player's turn: <b>White</b>";
+        document.getElementById("blackTime").style.backgroundColor = "darkgrey";
+        document.getElementById("whiteTime").style.backgroundColor = "white";
 	}
 }
