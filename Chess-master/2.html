@@ -10,9 +10,16 @@
     height: 100vh;
     width: 100vw;
   }
+  button{
+    height: 25%;
+    width: 100%;
+  }
   .container {
     display: flex;
     width: 100%;
+  }
+  .buttonc {
+    width: 10%;
   }
   .iframe-container {
     width: 50%;
@@ -20,13 +27,22 @@
     border: none;
   }
 </style>
+<script>
+  function refreshIframeBySrc(id) {
+    const iframe = document.getElementById(id);
+    iframe.src=iframe.src
+  }
+</script>
 </head>
 <body>
 
 <div class="container">
-  <iframe src="https://artz1234.github.io/Collection/Chess-master/" class="iframe-container"></iframe>
-  <iframe src="https://artz1234.github.io/Collection/Chess-master/" class="iframe-container"></iframe>
+  <iframe src="https://artz1234.github.io/Collection/Chess-master/" class="iframe-container" id="Iframe1"></iframe>
+  <iframe src="https://artz1234.github.io/Collection/Chess-master/" class="iframe-container" id="Iframe2"></iframe>
+  <div class="buttonc">  
+  <button onclick="refreshIframeBySrc('Iframe1')">Refresh Board 1</button>
+  <button onclick="refreshIframeBySrc('Iframe2')">Refresh Board 2</button>
+  </div>
 </div>
-
 </body>
 </html>
