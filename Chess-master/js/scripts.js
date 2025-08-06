@@ -7,37 +7,36 @@ let boardSquares = [];
 
 let selectedSquare = null;
 
-function setClrT() {
-    if(currentPlayer.color == "white"){
-        let wSec = document.getElementById("whiteSec").innerHTML;
-        console.log(wSec);
-        wSec = wSec - 1;
-        if(wSec < 0){
-            if(document.getElementById("whiteMin").innerHTML==0){
-                showError("No time for WHITE");
-            }
-            document.getElementById("whiteMin").innerHTML = document.getElementById("whiteMin").innerHTML - 1;
-            wSec = wSec + 60;
-        }
-        document.getElementById("whiteSec").innerHTML = String(wSec).padStart(2, '0');
-    }
-    if(currentPlayer.color == "black"){
-        let wSec = document.getElementById("blackSec").innerHTML;
-        console.log(wSec);
-        wSec = wSec - 1;
-        if(wSec < 0){
-            if(document.getElementById("blackMin").innerHTML==0){
-                showError("No time for black");
-            }
-            document.getElementById("blackMin").innerHTML = document.getElementById("blackMin").innerHTML - 1;
-            wSec = wSec + 60;
-        }
-        document.getElementById("blackSec").innerHTML = String(wSec).padStart(2, '0');
-    }
+function setTime(){
+    document.getElementById("whiteMin").innerHTML = document.getElementById('setMin').value;
+    document.getElementById("blackMin").innerHTML = document.getElementById('setMin').value;
+    document.getElementById("blackSec").innerHTML = "00";
+    document.getElementById("whiteSec").innerHTML = "00";
+    document.getElementById("blackMil").innerHTML = "00";
+    document.getElementById("whiteMil").innerHTML = "00";
 }
 
-// Call the function every 1000 milliseconds (1 second)
-const intervalId = setInterval(setClrT, 1000);
+function setClrT() {
+    let wMil = document.getElementById(currentPlayer.color+"Mil").innerHTML;
+    let wSec = document.getElementById(currentPlayer.color+"Sec").innerHTML;
+    wMil -= 1;
+    if(wMil < 0){
+        wSec -= 1;
+        wMil += 100;
+    }
+    if(wSec < 0){
+        if(document.getElementById(currentPlayer.color+"Min").innerHTML==0){
+            showError("No time for"+ currentPlayer.color);
+        }
+        document.getElementById(currentPlayer.color+"Min").innerHTML = document.getElementById(currentPlayer.color+"Min").innerHTML - 1;
+        wSec = wSec + 60;
+    }
+    document.getElementById(currentPlayer.color+"Sec").innerHTML = String(wSec).padStart(2, '0');
+    document.getElementById(currentPlayer.color+"Mil").innerHTML = String(wMil).padStart(2, '0');
+}
+
+// Call the function every 10 milliseconds 
+const intervalId = setInterval(setClrT, 10);
 
 let Player = function(color){
     this.checked = false;

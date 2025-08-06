@@ -37,10 +37,12 @@
 			<a href="#" class="overlay-button" onclick="newsetup();">New Game</a>
 		</div>
 	</div> 
-</section>
+</section> 
  
-<span style="color: white;background-color: black;border-radius: 5px;padding: 3px; border: 2px solid gray;" id="blackTime"><span id="blackMin">10</span>:<span id="blackSec">00</span></span>
-<span style="color: black;background-color: white;border-radius: 5px;padding: 3px; border: 2px solid gray;" id="whiteTime"><span id="whiteMin">10</span>:<span id="whiteSec">00</span></span>
+<span style="color: white;background-color: black;border-radius: 5px;padding: 3px; border: 2px solid gray;" id="blackTime"><span id="blackMin">10</span>:<span id="blackSec">00</span>:<span id="blackMil">00</span></span>
+<span style="color: black;background-color: white;border-radius: 5px;padding: 3px; border: 2px solid gray;" id="whiteTime"><span id="whiteMin">10</span>:<span id="whiteSec">00</span>:<span id="whiteMil">00</span></span>
+<input type="number" value="10" min="1" max="100" style="width: 50px;" id="setMin">
+<button onclick="setTime()">Set</button>
 <a href="#" class="button" onclick="showEnd('This will reset the current game');">New Game</a> 
 <script type="text/javascript" src="js/scripts.js"></script>
 
